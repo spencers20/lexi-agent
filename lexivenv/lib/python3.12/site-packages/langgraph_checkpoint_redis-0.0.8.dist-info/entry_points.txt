@@ -1,0 +1,10 @@
+[console_scripts]
+check-format=scripts:check_format
+check-lint=scripts:check_lint
+check-mypy=scripts:check_mypy
+check-sort-imports=scripts:check_sort_imports
+format=scripts:format
+sort-imports=scripts:sort_imports
+test=scripts:test
+test-verbose=scripts:test_verbose
+
