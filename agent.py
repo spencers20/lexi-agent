@@ -16,6 +16,7 @@ from IPython.display import display,Image
 from langchain_openai import AzureChatOpenAI
 import asyncio
 import uuid
+# from pathlib import
 
 
 load_dotenv()
@@ -25,6 +26,10 @@ LANGSMITH_TRACING=True
 # LANGSMITH_API_KEY=os.environ['LANGSMITH_API_KEY']
 
 # LANGSMITH_PROJECT=os.environ['LANGSMITH_PROJECT']
+
+
+
+
 
 if not os.getenv("COHERE_API_KEY"):
     os.environ['COHERE_API_KEY']=os.environ['COHERE_API_KEY']

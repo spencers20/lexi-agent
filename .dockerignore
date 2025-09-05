@@ -33,6 +33,7 @@ ENV/
 env.bak/
 venv.bak/
 lexienv/
+run/
 
 # IDE
 .vscode/

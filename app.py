@@ -5,13 +5,19 @@ import uvicorn
 import uuid
 from typing import Optional
 from data_analysis_agent import query_analysis_agent
+from journal import get_habits_or_journeys
 app=FastAPI()
 
 class QueryInput(BaseModel):
-    question:str
+    question:Optional[str]=None
     namespace:Optional[str]=None
     file_path:Optional[str]=None
     thread_id:Optional[str]=None
+    habit_query:Optional[str]=None
+    journey_title:Optional[str]=None
+    journey_description:Optional[str]=None
+    number_of_days:Optional[str]=None
+    prescription:Optional[str]=None
 
 @app.post("/agent")
 async def call_agent(query:QueryInput):
@@ -40,6 +46,15 @@ async def call_agent(query:QueryInput):
     except Exception as e:
         print("error in querrying agent",e)
         return {"error":f"error querying the agent {e}"}
+    
+@app.post("/habit_and_journeys")
+def call_habit_and_journeys(query:QueryInput):
+    try:
+        print("calling the journey habit agent...")
+        response=get_habits_or_journeys(habit_query=query.habit_query,journey_title=query.journey_title,journey_description=query.journey_description,number_of_days=query.number_of_days,prescription=query.prescription)
+        return {"response":response}
+    except Exception as e: 
+        return{"error":f"error in querrying the habits and journeys agent {e}"}
 
 # @app.post("/analyzer")
 # def call_analyzer(query:QueryInput):
