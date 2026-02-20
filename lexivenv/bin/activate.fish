@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV /home/spencer/codes/lexiAgent/lexivenv
+set -gx VIRTUAL_ENV /home/spence21/21s/codes/lexi-agent/lexivenv
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH

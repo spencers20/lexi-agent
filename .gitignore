@@ -1,0 +1,12 @@
+# ----------------------------
+# ENV FILES (VERY IMPORTANT)
+# ----------------------------
+.env
+.dockerignore
+
+# Virtual environments
+lexivenv/
+
+
+
+

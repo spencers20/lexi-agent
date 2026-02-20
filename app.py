@@ -18,6 +18,11 @@ class QueryInput(BaseModel):
     journey_description:Optional[str]=None
     number_of_days:Optional[str]=None
     prescription:Optional[str]=None
+    # strand:Optional[str]=None#ADDED
+    # sub_strand:Optional[str]=None
+    # lesson_topic:Optional[str]=None
+    # namespaceII:Optional[str]=None
+
 
 @app.post("/agent")
 async def call_agent(query:QueryInput):
@@ -36,10 +41,13 @@ async def call_agent(query:QueryInput):
             return {"error":"No Document loaded"}
             raise
         if namespace:
-            answer=await query_agent(question=query.question,namespace=namespace,thread_id=thread_id)
+            answer=await query_agent(question=query.question,namespace=namespace,thread_id=thread_id )
+            # answer=await query_agent(question=query.question,namespace=namespace,thread_id=thread_id,namespaceII=query.namespaceII,strand=query.strand,sub_strand=query.sub_strand,lesson_topic=query.lesson_topic )
             return {"response":answer, "chatId":thread_id}
+        # querry for data analysis
+
         if file_path:
-            answer=query_analysis_agent(question=query.question, file_path=file_path,thread_id=thread_id)
+            answer=query_analysis_agent(question=query.question, file_path=file_path,thread_id=thread_id,)
             return {"response":answer.get("final_answer"), "text_response":answer.get("text_response"), "visuals":answer.get("visuals"),"chatId":thread_id}
 
 

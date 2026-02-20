@@ -18,6 +18,7 @@ import json
 from langgraph.graph import StateGraph,START,END
 from langgraph.checkpoint.memory import MemorySaver
 from pathlib import Path
+from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 
 
 
@@ -26,6 +27,10 @@ import re
 if not os.environ['AZURE_OPENAI_API_KEY']:
     os.environ['AZURE_OENAI_API_KEY']=os.environ['AZURE_OPENAI_API_KEY']
 
+
+if not os.getenv("HUGGINGFACEHUB_API_TOKEN"):
+    os.environ["HUGGINGFACEHUB_API_TOKEN"]=os.environ["HUGGINGFACEHUB_API_TOKEN"]
+
 logging.basicConfig(level=logging.DEBUG)
 llm=AzureChatOpenAI(
     azure_endpoint=os.environ['AZURE_ENDPOINT'],
@@ -33,6 +38,13 @@ llm=AzureChatOpenAI(
     openai_api_version=os.environ['AZURE_API_VERSION'],
     temperature=0.1
 )
+
+# model = HuggingFaceEndpoint(
+#     repo_id="meta-llama/Llama-3.1-8B-Instruct",
+#     temperature=0.1,
+#     max_new_tokens=1024,
+# )
+# llm = ChatHuggingFace(llm=model)
 
 
 #create a state

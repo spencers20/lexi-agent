@@ -95,8 +95,7 @@ class Stream(Generic[_T]):
                     )
 
                 yield process_data(data={"data": data, "event": sse.event}, cast_to=cast_to, response=response)
-
-        # Ensure the entire stream is consumed
+        # The stream needs to be fully consumed to close the response
         for _sse in iterator:
             ...
 
@@ -197,8 +196,7 @@ class AsyncStream(Generic[_T]):
                     )
 
                 yield process_data(data={"data": data, "event": sse.event}, cast_to=cast_to, response=response)
-
-        # Ensure the entire stream is consumed
+        # The stream needs to be fully consumed to close the response
         async for _sse in iterator:
             ...
 
