@@ -171,9 +171,9 @@ syrupy==4.9.1
 tabulate==0.9.0
 tenacity==8.5.0
 tiktoken==0.9.0
-tokenizers==0.22.2
+tokenizers
 tomlkit==0.13.3
-torch==2.10.0
+torch
 torchaudio==2.10.0
 torchvision==0.25.0
 tornado==6.5.4
