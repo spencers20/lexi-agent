@@ -52,7 +52,7 @@ if not os.getenv("HUGGINGFACEHUB_API_TOKEN"):
 
 # vectore store fron pinecone 
 pc=Pinecone(api_key=os.environ['PINECONE_API'])
-index=pc.Index('lexifile')
+index=pc.Index(os.environ['LEXIFILE_INDEX'])
 embeddings=CohereEmbeddings(model="embed-english-v3.0")
 
 
