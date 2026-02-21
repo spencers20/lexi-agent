@@ -18,6 +18,8 @@ import asyncio
 import uuid
 from langchain_openai import ChatOpenAI
 from langchain.chat_models import init_chat_model
+# from langchain_community.chat_models.huggingface import ChatHuggingFace
+# from langchain_community.llms.huggingface_endpoint import HuggingFaceEndpoint
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 
 # from pathlib import
@@ -35,20 +37,20 @@ LANGSMITH_TRACING=True
 
 
 
-if not os.getenv("COHERE_API_KEY"):
-    os.environ['COHERE_API_KEY']=os.environ['COHERE_API_KEY']
+# if not os.getenv("COHERE_API_KEY"):
+#     os.environ['COHERE_API_KEY']=os.environ['COHERE_API_KEY']
 
-if not os.getenv("AZURE_OPENAI_API_KEY"):
-    os.environ['AZURE_OPENAI_API_KEY']=os.environ['AZURE_API_KEY']
+# if not os.getenv("AZURE_OPENAI_API_KEY"):
+#     os.environ['AZURE_OPENAI_API_KEY']=os.environ['AZURE_API_KEY']
 
-if not os.getenv("OPENAI_API_KEY"):
-    os.environ['OPENAI_API_KEY']=os.environ['OPENAI_API_KEY']
+# if not os.getenv("OPENAI_API_KEY"):
+#     os.environ['OPENAI_API_KEY']=os.environ['OPENAI_API_KEY']
 
-if not os.getenv("ANTHROPIC_API_KEY"):
-    os.environ["ANTHROPIC_API_KEY"]=os.environ["ANTHROPIC_API_KEY"]
+# if not os.getenv("ANTHROPIC_API_KEY"):
+#     os.environ["ANTHROPIC_API_KEY"]=os.environ["ANTHROPIC_API_KEY"]
 
-if not os.getenv("HUGGINGFACEHUB_API_TOKEN"):
-    os.environ["HUGGINGFACEHUB_API_TOKEN"]=os.environ["HUGGINGFACEHUB_API_TOKEN"]
+# if not os.getenv("HUGGINGFACEHUB_API_TOKEN"):
+#     os.environ["HUGGINGFACEHUB_API_TOKEN"]=os.environ["HUGGINGFACEHUB_API_TOKEN"]
 
 # vectore store fron pinecone 
 pc=Pinecone(api_key=os.environ['PINECONE_API'])
