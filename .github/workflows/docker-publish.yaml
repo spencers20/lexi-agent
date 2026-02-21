@@ -10,7 +10,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ghcr.io/spencers20/lexiagent:latestv2
+  IMAGE_NAME: spencers20/lexiagent
 
 jobs:
   build-and-push:
