@@ -1,7 +1,7 @@
 from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 import os
-# import getpass
+import getpass
 from pinecone import Pinecone
 from langchain_cohere import CohereEmbeddings
 from langchain_pinecone import PineconeVectorStore
