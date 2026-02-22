@@ -6,6 +6,8 @@ import uuid
 from typing import Optional
 from data_analysis_agent import query_analysis_agent
 from journal import get_habits_or_journeys
+import os
+
 app=FastAPI()
 
 class QueryInput(BaseModel):
@@ -75,5 +77,6 @@ def call_habit_and_journeys(query:QueryInput):
 #     except Exception as e:
 #         return {"error":f"error in querrying the analyzeerr \n\n {e}"}
 if __name__=="__main__":
-    uvicorn.run("app:app",host="0.0.0.0",port=8000, reload=True)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("app:app",host="0.0.0.0",port=port, reload=True)
 
