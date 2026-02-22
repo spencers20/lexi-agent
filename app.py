@@ -78,5 +78,6 @@ def call_habit_and_journeys(query:QueryInput):
 #         return {"error":f"error in querrying the analyzeerr \n\n {e}"}
 if __name__=="__main__":
     port = int(os.environ.get("PORT", 8000))
-    uvicorn.run("app:app",host="0.0.0.0",port=port, reload=True)
+    # uvicorn.run("app:app",host="0.0.0.0",port=port, reload=True)
+    uvicorn.run("app:app",host="0.0.0.0",port=port)
 
