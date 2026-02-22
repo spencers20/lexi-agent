@@ -37,20 +37,20 @@ LANGSMITH_TRACING=True
 
 
 
-# if not os.getenv("COHERE_API_KEY"):
-#     os.environ['COHERE_API_KEY']=os.environ['COHERE_API_KEY']
+if not os.getenv("COHERE_API_KEY"):
+    os.environ['COHERE_API_KEY']=os.environ['COHERE_API_KEY']
 
-# if not os.getenv("AZURE_OPENAI_API_KEY"):
-#     os.environ['AZURE_OPENAI_API_KEY']=os.environ['AZURE_API_KEY']
+if not os.getenv("AZURE_OPENAI_API_KEY"):
+    os.environ['AZURE_OPENAI_API_KEY']=os.environ['AZURE_API_KEY']
 
-# if not os.getenv("OPENAI_API_KEY"):
-#     os.environ['OPENAI_API_KEY']=os.environ['OPENAI_API_KEY']
+if not os.getenv("OPENAI_API_KEY"):
+    os.environ['OPENAI_API_KEY']=os.environ['OPENAI_API_KEY']
 
-# if not os.getenv("ANTHROPIC_API_KEY"):
-#     os.environ["ANTHROPIC_API_KEY"]=os.environ["ANTHROPIC_API_KEY"]
+if not os.getenv("ANTHROPIC_API_KEY"):
+    os.environ["ANTHROPIC_API_KEY"]=os.environ["ANTHROPIC_API_KEY"]
 
-# if not os.getenv("HUGGINGFACEHUB_API_TOKEN"):
-#     os.environ["HUGGINGFACEHUB_API_TOKEN"]=os.environ["HUGGINGFACEHUB_API_TOKEN"]
+if not os.getenv("HUGGINGFACEHUB_API_TOKEN"):
+    os.environ["HUGGINGFACEHUB_API_TOKEN"]=os.environ["HUGGINGFACEHUB_API_TOKEN"]
 
 # vectore store fron pinecone 
 pc=Pinecone(api_key=os.environ['PINECONE_API'])
