@@ -2,8 +2,6 @@
 
 LexiAgent is the backend microservice powering **Lexifile**, an AI-powered document analysis platform. It's built as a multi-agent system where incoming requests are routed to a specialized agent depending on what the user is trying to do — querying documents, analyzing a CSV, or generating a personalized health journey/habit plan. Each agent is built with **LangGraph** as a stateful graph, so a single "question" can trigger multiple internal reasoning steps before a final answer is returned.
 
-> **Status:** The hosted backend is currently offline (cloud subscription lapsed). The codebase, architecture, and agent logic below reflect the working implementation. Available on request for a walkthrough or local demo.
-
 ---
 
 ## Architecture Overview
